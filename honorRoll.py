@@ -1,3 +1,9 @@
+"""
+Author: Samantha Lopez
+Last updated: 01/28/2024
+Python program to determine if a student qualifies for the Dean's list or Honor roll
+"""
+
 def honorRoll():
     while True:
         lname = input("Enter student's last name (or type 'ZZZ' to quit): ")
