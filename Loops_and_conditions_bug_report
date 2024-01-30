@@ -1,0 +1,5 @@
+First run:
+    All code ran as expected except for 6.2 where output only printed "too low" once.
+
+Second run:
+    moved "break" where it actually ran inside the "found it" section. Then, all code ran as expected
