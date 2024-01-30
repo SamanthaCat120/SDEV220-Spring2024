@@ -1,0 +1,4 @@
+first run: 
+    All code ran as expected. 
+Possible concern:
+    Was fearful that break wasn't enough to quit the program gracefully. I double-checked and it seems that it will exit the program gracefully with the program as written.
