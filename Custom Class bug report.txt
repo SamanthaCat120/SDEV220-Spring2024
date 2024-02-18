@@ -1,0 +1,9 @@
+Custom Class bug report
+
+when adding example usage, Spyder indicated it expected that block to be indented. Realized forgot to type "pass" to "else"
+
+when attempting to define new instance, Spyder indicated "could not assign function call". Realized parenthesis weren't properly around the entire line.
+
+Then, also realized the play method was inside of the init method. Corrected indentions
+
+Added uml file, but I see it's raw data, so I'm adding a png version.
