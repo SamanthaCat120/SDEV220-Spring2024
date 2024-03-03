@@ -46,8 +46,12 @@ def deductTaxes(gross, tax_bracket):
     net = gross = deduction
     return net
 
+@logger
 def printCheck(net, name):
-    pass
+    with open(name + "_check.txt", "w") as toFile:
+        toFile.write("\t\t" + str(datetime.datetime.today())[0:10] + "\n\n")
+        toFile.write("pay to the order of: \t" + name + "\n")
+        toFile.write("Amount: $ \t" + format(net, ".2f"))
 
 
 
