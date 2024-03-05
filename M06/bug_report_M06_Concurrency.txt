@@ -1,0 +1,12 @@
+Bug Report
+
+In 13.3, first put a single quote at the beginning and a double-quote at the end. Received error SyntaxError: unterminated string literal (detected at line 1) in 13.3, then ran into all sorts of formatting errors:
+ValueError Traceback (most recent call last) Cell In[16], line 6 4 today_string = file.read().strip() 5 fmt = "It's %A %B-%d-%Y." ----> 6 parsed_date = datetime.strptime(today_string, fmt) 7 print(parsed_date)
+
+File ~\AppData\Local\Programs\Python\Python312\Lib_strptime.py:555, in _strptime_datetime(cls, data_string, format) 552 def _strptime_datetime(cls, data_string, format="%a %b %d %H:%M:%S %Y"): 553 """Return a class cls instance based on the input string and the 554 format string.""" --> 555 tt, fraction, gmtoff_fraction = _strptime(data_string, format) 556 tzname, gmtoff = tt[-2:] 557 args = tt[:6] + (fraction,)
+
+File ~\AppData\Local\Programs\Python\Python312\Lib_strptime.py:333, in _strptime(data_string, format) 331 found = format_regex.match(data_string) 332 if not found: --> 333 raise ValueError("time data %r does not match format %r" % 334 (data_string, format)) 335 if len(data_string) != found.end(): 336 raise ValueError("unconverted data remains: %s" % 337 data_string[found.end():])
+
+ValueError: time data "It's Monday, March, 04, 2024." does not match f
+
+Finally, went back and re-did a second today.text file, because I liked the way I wrote the first one.
