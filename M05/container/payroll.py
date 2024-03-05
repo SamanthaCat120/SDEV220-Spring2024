@@ -7,14 +7,13 @@ Last updated on Sat Feb 24 19:56:46 2024
 @author: Samantha Lopez
 """
 
+import datetime
 from functools import wraps
 
+TAX_RATE = 0.14
+OVERTIME_THRESHOLD = 40
+OVERTIME_MULTIPLIER = 1.5
 
-#@todo payroll calculator: 
-    #get name and hours and rate,
-    #calc overtime or not,
-    #and 14% taxes
-    
 def logger(func):
     @wraps(func)
     def logging(*args, **kwargs):
@@ -26,24 +25,22 @@ def logger(func):
 @logger
 def getInputs():
     name = input("WHAT is your name? ")
-    hours = float(input("What is your favorite colo--I mean, How many hours did you work? "))
-    rate = float(input("What is your hourly worth according to corporate America? "))
+    hours = float(input("How many hours did you work? "))
+    rate = float(input("What is your hourly rate? "))
     return name, hours, rate
-    
+
 @logger
 def calculateGross(hours, rate):
-    if hours > 40:
-        gross = (hours-40) * rate * 1.5 + 40 * rate
+    if hours > OVERTIME_THRESHOLD:
+        gross = (hours - OVERTIME_THRESHOLD) * rate * OVERTIME_MULTIPLIER + OVERTIME_THRESHOLD * rate
     else:
         gross = hours * rate
     return gross
-    
 
 @logger
-def deductTaxes(gross, tax_bracket):
-    tax_bracket = .14
-    deduction = gross * tax_bracket
-    net = gross = deduction
+def deductTaxes(gross):
+    deduction = gross * TAX_RATE
+    net = gross - deduction
     return net
 
 @logger
@@ -53,17 +50,9 @@ def printCheck(net, name):
         toFile.write("pay to the order of: \t" + name + "\n")
         toFile.write("Amount: $ \t" + format(net, ".2f"))
 
-
-
-
-
-
-
-
-
-
-
 if __name__=="__main__":
     name, hours, rate = getInputs()
     print(name, hours, rate)
     gross = calculateGross(hours, rate)
+    net = deductTaxes(gross)
+    print('Your net amount is $ ', format(net, ".2f"))
