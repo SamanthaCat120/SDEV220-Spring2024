@@ -10,3 +10,5 @@ File ~\AppData\Local\Programs\Python\Python312\Lib_strptime.py:333, in _strptime
 ValueError: time data "It's Monday, March, 04, 2024." does not match f
 
 Finally, went back and re-did a second today.text file, because I liked the way I wrote the first one.
+
+As far as 15.1, Not sure why Jupyter Notebook doesn't want to run this. Can copy and paste the file in Spyder or Sublime and it works fine.
