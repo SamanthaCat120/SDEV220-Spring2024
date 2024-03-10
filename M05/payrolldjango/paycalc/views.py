@@ -15,7 +15,7 @@ def simple(request):
 def inputs(request):
 	return render(request, "payroll.html")
 
-def payroll(request):
+def calculatePay(request):
 	return render(request, "payroll.html")
 
 
