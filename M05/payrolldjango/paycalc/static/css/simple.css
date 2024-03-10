@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../static/images/coffee.jpg');
+    background-image: url('../images/coffee.jpg');
     background-size: 45%;
     background-repeat: no-repeat;
     background-position: center;
@@ -9,8 +9,8 @@ body {
 footer {
     background-color: #f0f0f0;
     padding: 5px;
-    margin-top: auto;
-    text-align: center;
-    position: 490px;
+    position: absolute;
+    bottom: 0; /* Position the footer at the bottom of the viewport */
     width: 100%;
+    text-align: center;
 }
