@@ -71,7 +71,7 @@ section {
 }
 
  #homehero { 
-    background-image: url(images/moneyBackground.jpg);
+    background-image: url(..static/images/moneyBackground.jpg);
     height: 290px;
     background-size: 200%, 100%;
     background-repeat: no-repeat;
