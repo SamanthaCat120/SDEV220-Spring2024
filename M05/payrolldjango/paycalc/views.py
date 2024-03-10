@@ -1,50 +1,43 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
-
+TAX_RATE = 0.14
+OVERTIME_THRESHOLD = 40
+OVERTIME_MULTIPLIER = 1.5
 
 def homePage(request):
-	return render(request, "homePage.html")
+    return render(request, "homePage.html")
 
 def simple(request):
-	data = {"title": "Simple Template", "message": "Hello World"}
-	return render(request, "simple.html", data)
+    data = {"title": "Simple Template", "message": "Hello World"}
+    return render(request, "simple.html", data)
 
 def inputs(request):
-	return render(request, "payroll.html")
+    return render(request, "payroll.html")
 
 def calculatePay(request):
-	return render(request, "payroll.html")
+    if request.method == 'GET':
+        name = request.GET.get('name', '')
+        hours = float(request.GET.get('hours', 0))
+        rate = float(request.GET.get('rate', 0))
+        need = float(request.GET.get('need', 0))
 
-def calculateGross(request):
-	data = {"name": "name", "rate": "rate", "hours": "hours", "need": "need"}
-	if hours > OVERTIME_THRESHOLD:
-		gross = (hours - OVERTIME_THRESHOLD) * rate * OVERTIME_MULTIPLIER + OVERTIME_THRESHOLD * rate
-	else:
-		gross = hours * rate
-		return gross
+        gross = calculateGross(hours, rate)
+
+        net = deductTaxes(gross)
+
+        return render(request, "results.html", {'name': name, 'gross': gross, 'net': net, 'need': need})
+
+    return HttpResponse("Invalid request method")
+
+def calculateGross(hours, rate):
+    if hours > OVERTIME_THRESHOLD:
+        gross = (hours - OVERTIME_THRESHOLD) * rate * OVERTIME_MULTIPLIER + OVERTIME_THRESHOLD * rate
+    else:
+        gross = hours * rate
+    return gross
 
 def deductTaxes(gross):
-	deduction = gross * TAX_RATE
-	net = gross - deduction
-	return net
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    deduction = gross * TAX_RATE
+    net = gross - deduction
+    return net

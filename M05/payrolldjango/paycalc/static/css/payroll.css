@@ -1,5 +1,3 @@
-/* css for ch11 Pacific Trails Resort */
-
 * {
     box-sizing:border-box;
 }
@@ -71,7 +69,7 @@ section {
 }
 
  #homehero { 
-    background-image: url(..static/images/moneyBackground.jpg);
+    background-image: url(../images/moneyBackground.jpg);
     height: 290px;
     background-size: 200%, 100%;
     background-repeat: no-repeat;

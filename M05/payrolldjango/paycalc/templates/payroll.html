@@ -4,8 +4,7 @@
 		<title>Ka-Ching</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="{% static 'payroll.css %'}">
+		<link rel="stylesheet" type="text/css" href="../static/css/payroll.css">
 	</head>
 	<body>
 		<header>
@@ -30,15 +29,20 @@
 			<div class="resort">
 				<form action="results.html" method="GET">
 					<fieldset>
-						<legend>Keyboard Inputs</legend>
-						<p>State your name:  <input type="text" step="1" name="name"></p>
-						<p>How many hours did you work THIS week?: <input type="number" step=".01" name="hours"/></p>
-						<p>What is your rate of pay: <input type="number" step=".01" name="rate"/>
-						<p>How much money do you need this week?: <input type="number" step=".01" name="rate"/>
-						<p><iput type="submit" value="Calculate"/></p>
+					<form action="{% url 'calculatePay' %}" method="GET">
+						<label for="name">Name:</label>
+						<input type="text" id="name" name="name" required><br><br>
 
+						<label for="hours">Hours Worked:</label>
+						<input type="number" id="hours" name="hours" required><br><br>
 
-					</fieldset>
+						<label for="rate">Hourly Rate:</label>
+						<input type="number" id="rate" name="rate" required><br><br>
+
+						<label for="need">Amount Needed:</label>
+						<input type="number" id="need" name="need" required><br><br>
+						<input type="submit" value="Calculate">
+				</form>
 
 					<h2>Uncommon Knowledge</h2>
 			<ul>
