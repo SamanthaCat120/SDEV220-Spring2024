@@ -25,7 +25,7 @@ def logger(func):
 
 @logger
 def getInputs():
-    name = input("WHAT is your name? ")
+    name = input("State your name...I mean type it? ")
     hours = float(input("How many hours did you work? "))
     rate = float(input("What is your hourly rate? "))
     need = float(input("How much did you need this week? "))
