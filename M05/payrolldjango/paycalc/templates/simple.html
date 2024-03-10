@@ -7,18 +7,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('../images/coffee.jpg');
-            background-size: cover;
+            background-image: url('../static/images/coffee.jpg');
+            background-size: 45%;
+            background-repeat: no-repeat;
             background-position: center;
+            background-position-y:70px;
         }
+        footer {
+        	background-color: #f0f0f0;
+        	padding: 5px;
+        	margin-top: auto;
+        	text-align: center;
+        	position: 490px;
+        	width: 100%;
+}
     </style>
 </head>
 <body>
 
     {% if message %}
-    <h1>{{ message }}</h1>
+    <center><h1>{{ message }}</h1></center>
     {% else %}
-    <p>This template didn't receive an expected message</p>
+    <center><p>This template didn't receive an expected message</p></center>
     {% endif %}
 
 <footer>
