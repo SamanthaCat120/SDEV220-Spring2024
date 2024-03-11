@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tip</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/payroll.css">
+</head>
+<body>
+
+	<p> Your net amount is ${{ net }}. </p>
+	<p> Your gross pay is ${{  gross }}.</p>
+	<p> You need ${{ need }} to cover the bills this week. </p>
+
+	{% if net >= need %}
+        <p>Yay, you made what you need to spend this week! &#128522;</p>
+    {% else %}
+        <p>I guess you'll have to work more next week. &#128542;,</p>
+    {% endif %}
+
+Image compliments of <a href="https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=69527">PublicDomainPictures</a> <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=69527">Pixabay</a>
+
+</body>
+</html>

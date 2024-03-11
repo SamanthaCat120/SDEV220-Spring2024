@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/coffee.jpg');
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y:70px;
+    }
+footer {
+    background-color: #f0f0f0;
+    padding: 5px;
+    position: absolute;
+    bottom: 0; /* Position the footer at the bottom of the viewport */
+    width: 100%;
+    text-align: center;
+}

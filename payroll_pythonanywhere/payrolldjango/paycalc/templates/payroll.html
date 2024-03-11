@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ka-Ching</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../static/css/payroll.css">
+	</head>
+	<body>
+		<header>
+			<h1><a href="index.html">Payroll Application</a></h1>
+		
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="irs.gov">Who is Taking Your Money?</a></li>
+				<li><a href="thebudgetmom.com">Need Help With Budgeting?</a></li>
+				<li><a href="reservations.html">Reservations</a></li>
+			</ul>
+		</nav>	
+	</header>
+	<div id="wrapper">
+		<div id="homehero"></div>
+	<main>
+		<br>
+		<h2>What can you do with your paycheck?</h2>
+			<p>Pacific Trails Resort on the California North Coast offers panoramic views of the Pacific Ocean. Their guests experience an opulent camping adventure in sumptuously appointed private yurts featuring a gas fireplace, king-size bed, and private deck. However, to stay at Pacific Trails Resort, you need money. Without money, you will probably die from exposure, starvation, or both. So, you got a job. Congratulations! How much money are you getting on your check?</p>
+					<br>
+			<div class="resort">
+				<form action="results.html" method="GET">
+					<fieldset>
+					<form action="{% url 'calculatePay' %}" method="GET">
+						<label for="name">Name:</label>
+						<input type="text" id="name" name="name" required><br><br>
+
+						<label for="hours">Hours Worked:</label>
+						<input type="number" id="hours" name="hours" required><br><br>
+
+						<label for="rate">Hourly Rate:</label>
+						<input type="number" id="rate" name="rate" required><br><br>
+
+						<label for="need">Amount Needed:</label>
+						<input type="number" id="need" name="need" required><br><br>
+						<input type="submit" value="Calculate">
+				</form>
+
+					<h2>Uncommon Knowledge</h2>
+			<ul>
+				<li>More money isn't taken away from your bonuses and overtime.</li>
+				<li>Your total tax liability is determined by your tax bracket and your overall taxable income for the year.</li>
+				<li>Why don't people understand this? Because they probably failed math.</li>
+			</ul>
+			</div>
+						<br>
+						<br>
+						<br>
+
+	</main>
+		<footer>
+			<br>
+			<br>
+			<br>
+			&copy;me<br>
+			<a href="mailto:slopez35@ivytech.edu:">slopez35@ivytech.edu</a><br>
+			<div>
+				<br>
+
+				This page was last modified on: 
+				<script>document.write(document.lastModified);</script>
+			</div>
+			<br>
+			<a href="#top">Go to top of page</a>
+		</footer>
+	</div>
+	</body>
+</html>
