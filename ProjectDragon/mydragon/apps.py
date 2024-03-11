@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MydragonappConfig(AppConfig):
+class MydragonConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'mydragonapp'
+    name = 'mydragon'

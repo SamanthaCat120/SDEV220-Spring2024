@@ -1,0 +1,10 @@
+* {
+    box-sizing:border-box;
+}
+body {
+    margin: 0;
+    background-color: #90C7E3;
+    background-image: ../static/images/bg2.png;
+    color: #666666;
+    font-family:Verdana, Arial, sans-serif;
+}
